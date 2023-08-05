@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+
+<div class="container">
+        <h1>Test ECB encryption mode</h1>
+
+    <form method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="is_admin">is_admin:</label><br>
+        <input type="text" id="is_admin" name="is_admin" required><br>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if flag %}
+        <p class="flag">{{ flag }}</p>
+        {% endif %}
+        <input type="submit" value="Login">
+    </form>
+</div>
+<span style="display: none;">Tip：Account has been encrypted for session/cookie</span>
+
+</body>
+</html>
